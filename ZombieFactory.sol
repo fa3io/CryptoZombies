@@ -21,7 +21,9 @@ contract ZombieFactory{
 
 	//Função de criação de zombies
 	//parametros de função por convenção inicia-se com ( _ ) para diferenciar de variaveis globais
-	function createZombie(string _name, uint _dna){
+	//Funções privadas tem o modificador private no final da declaração e por convenção tem ( _ ) no inicio de seu nome
+	//Apenas o proprio contrato acessa funções privadas
+	 function _createZombie(string _name, uint _dna) private {
 		zombies.push(Zombie(_name,_dna));
 	}
 }
