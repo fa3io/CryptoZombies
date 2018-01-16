@@ -15,6 +15,9 @@ contract ZombieFactory{
         string name;
         uint dna;
     }
+	
+	//Array dinamico por ser publico outros contratos podem chama-lo mas não altera-lo
+	Zombie[] public zombies;
 
 
 }
