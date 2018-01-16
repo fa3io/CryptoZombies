@@ -22,6 +22,6 @@ contract ZombieFactory{
 	//Função de criação de zombies
 	//parametros de função por convenção inicia-se com ( _ ) para diferenciar de variaveis globais
 	function createZombie(string _name, uint _dna){
-
+		zombies.push(Zombie(_name,_dna));
 	}
 }
