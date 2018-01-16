@@ -19,5 +19,9 @@ contract ZombieFactory{
 	//Array dinamico por ser publico outros contratos podem chama-lo mas não altera-lo
 	Zombie[] public zombies;
 
+	//Função de criação de zombies
+	//parametros de função por convenção inicia-se com ( _ ) para diferenciar de variaveis globais
+	function createZombie(string _name, uint _dna){
 
+	}
 }
