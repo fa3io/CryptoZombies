@@ -1,13 +1,13 @@
-//Vers„o do compilador usado
+Ôªø//Vers√£o do compilador usado
 pragma solidity ^0.4.19;
 
-//DeclaraÁ„o de um contrato
+//Declara√ß√£o de um contrato
 contract ZombieFactory{
 
 	//Variavel de estado do contrato fica armazenada na blockchain
 	uint dnaDigits = 16;
 	
-	//Inserindo operaÁıes
+	//Inserindo opera√ß√µes
 	uint dnaModulus = 10 ** dnaDigits;
 
 	//Estruturas nos permte criar tipos de dados mais complexos para nossos contratos
@@ -16,14 +16,21 @@ contract ZombieFactory{
         uint dna;
     }
 	
-	//Array dinamico por ser publico outros contratos podem chama-lo mas n„o altera-lo
+	//Array dinamico por ser publico outros contratos podem chama-lo mas n√£o altera-lo
 	Zombie[] public zombies;
 
-	//FunÁ„o de criaÁ„o de zombies
-	//parametros de funÁ„o por convenÁ„o inicia-se com ( _ ) para diferenciar de variaveis globais
-	//FunÁıes privadas tem o modificador private no final da declaraÁ„o e por convenÁ„o tem ( _ ) no inicio de seu nome
-	//Apenas o proprio contrato acessa funÁıes privadas
-	 function _createZombie(string _name, uint _dna) private {
+	//Fun√ß√£o de cria√ß√£o de zombies
+	//parametros de fun√ß√£o por conven√ß√£o inicia-se com ( _ ) para diferenciar de variaveis globais
+	//Fun√ß√µes privadas tem o modificador private no final da declara√ß√£o e por conven√ß√£o tem ( _ ) no inicio de seu nome
+	//Apenas o proprio contrato acessa fun√ß√µes privadas
+	function _createZombie(string _name, uint _dna) private {
 		zombies.push(Zombie(_name,_dna));
 	}
+	
+	//Fun√ß√µes de view n√£o alteram nada no aplicativo apenas retornan algo
+	//Fun√ß√µes puras (pure) que n√£o acess√£o nenhum dado do aplicativo seu retorno depende apenas dos parametros
+	//Fun√ß√£o para gerar o DNA Randomico
+	function _generateRandomDna(string _str) private view returns (uint) {
+    
+    }
 }
