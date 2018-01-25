@@ -31,6 +31,17 @@ contract ZombieFactory{
 	//Funções puras (pure) que não acessão nenhum dado do aplicativo seu retorno depende apenas dos parametros
 	//Função para gerar o DNA Randomico
 	function _generateRandomDna(string _str) private view returns (uint) {
-    
+    //Ethereum possui a função hash keccak256 incorporada, que é uma versão do SHA3. Uma função hash basicamente mapeia uma string de entrada para um número hexadecimal aleatório de 256 bits.
+		uint rand = uint(keccak256(_str));
+        return rand % dnaModulus;
     }
 }
+
+
+
+
+
+
+
+
+
